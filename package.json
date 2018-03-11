@@ -1,7 +1,7 @@
 {
-  "name": "contentful-model-generator",
+  "name": "contentful-plantuml-generator",
   "version": "1.0.0",
-  "description": "",
+  "description": "Generate a PlantUML diagram form a Contentful space",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,5 +11,6 @@
   "dependencies": {
     "@orq/superagent": "^0.3.0",
     "rxjs": "^5.5.6"
-  }
+  },
+  "keywords": ["Contentful", "PlantUML", "diagram"]
 }
