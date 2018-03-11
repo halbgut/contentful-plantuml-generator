@@ -2,10 +2,18 @@
 
 require('rxjs')
 
-const { paginatedRequest } = require('./lib/request')
 const { mkClass, toPlantUmlString } = require('./lib/plantuml')
 
-const [ , , spaceId ] = process.argv
+const [ , , spaceId, accessToken ] = process.argv
+const CONTENTFUL_BASE_URL =
+  process.env.CONTENTFUL_BASE_URL ||
+  'https://cdn.contentful.com'
+
+
+const { paginatedRequest } = require('./lib/request')({
+  accessToken,
+  baseUrl: CONTENTFUL_BASE_URL,
+})
 
 paginatedRequest(`/spaces/${spaceId}/content_types`)
 //  .do((obj) => console.log(JSON.stringify(obj, null, '  ')))
@@ -19,5 +27,8 @@ paginatedRequest(`/spaces/${spaceId}/content_types`)
   .map((classes) => toPlantUmlString({ classes }))
   .do((classes) => process.stdout.write(`${classes}\n`))
   .subscribe({
-    error: console.error
+    error: (err) => {
+      console.error(err)
+      process.exit(1)
+    },
   })
