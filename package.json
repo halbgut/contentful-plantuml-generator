@@ -15,5 +15,9 @@
   "keywords": ["Contentful", "PlantUML", "diagram"],
   "bin": {
     "contentful-plantuml-generator": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kriegslustig/orq-superagent.git"
   }
 }
