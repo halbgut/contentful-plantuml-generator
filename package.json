@@ -12,5 +12,8 @@
     "@orq/superagent": "^0.3.0",
     "rxjs": "^5.5.6"
   },
-  "keywords": ["Contentful", "PlantUML", "diagram"]
+  "keywords": ["Contentful", "PlantUML", "diagram"],
+  "bin": {
+    "contentful-plantuml-generator": "./index.js"
+  }
 }
