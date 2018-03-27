@@ -5,7 +5,7 @@ Quickly get an overview of a Contentful space.
 ## Usage
 
 ```
-contentful-plantuml-generator ${SPACE_ID} ${ACCESS_TOKEN} \
+contentful-plantuml-generator ${SPACE_ID} ${CONTENT_MANAGEMENT_TOKEN} \
   | plantuml -pipe -tsvg \
   > my-diagram.svg
 ```

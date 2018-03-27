@@ -7,7 +7,7 @@ const { mkClass, toPlantUmlString } = require('./lib/plantuml')
 const [ , , spaceId, accessToken ] = process.argv
 const CONTENTFUL_BASE_URL =
   process.env.CONTENTFUL_BASE_URL ||
-  'https://cdn.contentful.com'
+  'https://api.contentful.com'
 
 
 const { paginatedRequest } = require('./lib/request')({
