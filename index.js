@@ -16,7 +16,6 @@ const { paginatedRequest } = require('./lib/request')({
 })
 
 paginatedRequest(`/spaces/${spaceId}/content_types`)
-//  .do((obj) => console.log(JSON.stringify(obj, null, '  ')))
   .map((model) => {
     const classObj = mkClass(model.sys.id)
     model.fields.forEach(classObj.addContentfulField)
